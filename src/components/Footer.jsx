@@ -30,7 +30,8 @@ export default function Footer() {
           <div className="footer-col">
             <h4>Contact</h4>
             <ul>
-              <li><a href="mailto:hello@mrlionx.dev">hello@mrlionx.dev</a></li>
+              <li><a href="mailto:binethellepola@gmail.com">binethellepola@gmail.com</a></li>
+              <li><a href="tel:0742676588">0742676588</a></li>
               <li><a href="#contact">Start a project</a></li>
             </ul>
           </div>

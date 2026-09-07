@@ -1,14 +1,31 @@
 import { useState } from 'react'
 
-const BUDGETS = ['Under $300', '$300 – $800', '$800 – $2,000', 'Let\u2019s discuss']
+const BUDGETS = ['Under $300', '$300 - $800', '$800 - $2,000', "Let's discuss"]
+const CONTACT_EMAIL = 'binethellepola@gmail.com'
+const CONTACT_PHONE = '0742676588'
 
 export default function Contact() {
   const [status, setStatus] = useState('')
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault()
-    setStatus('Thanks — we\u2019ll reply within 1-2 business days.')
-    event.target.reset()
+    const form = event.target
+    setStatus('Sending...')
+
+    try {
+      const response = await fetch(`https://formsubmit.co/ajax/${CONTACT_EMAIL}`, {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: new FormData(form),
+      })
+
+      if (!response.ok) throw new Error('Request failed')
+
+      setStatus("Thanks - we'll reply within 1-2 business days.")
+      form.reset()
+    } catch (err) {
+      setStatus('Something went wrong - please email us directly instead.')
+    }
   }
 
   return (
@@ -19,12 +36,16 @@ export default function Contact() {
           <h2>Tell us about your project</h2>
           <p>
             Share a few details and we'll come back with a scope and a quote
-            — no obligation.
+            - no obligation.
           </p>
 
           <div className="contact-detail">
             <span>Email</span>
-            <span>hello@mrlionx.dev</span>
+            <span>{CONTACT_EMAIL}</span>
+          </div>
+          <div className="contact-detail">
+            <span>Phone</span>
+            <span>{CONTACT_PHONE}</span>
           </div>
           <div className="contact-detail">
             <span>Response time</span>
