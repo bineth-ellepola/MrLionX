@@ -1,45 +1,44 @@
 const PLANS = [
   {
-    name: 'Starter',
-    note: 'A focused landing page',
-    price: '$150',
-    unit: 'starting from',
+    name: 'Wedding Website',
+    note: 'A beautiful site for your big day',
+    price: 'Rs.5000',
+    unit: 'all inclusive',
     features: [
-      'Single-page responsive site',
-      'Up to 5 sections',
-      'Basic contact form',
+      'Our story & photo gallery',
+      'Event date, time & venue details',
+      'RSVP form',
       '1 round of revisions',
     ],
-    cta: 'Get a quote',
-    featured: false,
-  },
-  {
-    name: 'Business',
-    note: 'A full multi-page website',
-    price: '$400',
-    unit: 'starting from',
-    features: [
-      'Up to 6 pages',
-      'Custom responsive design',
-      'CMS-ready content sections',
-      '2 rounds of revisions',
-      'Basic SEO setup',
-    ],
-    cta: 'Get a quote',
+    cta: 'Get started',
     featured: true,
   },
   {
-    name: 'Custom app',
-    note: 'A product-grade frontend',
-    price: 'Let\u2019s talk',
-    unit: 'scoped per project',
+    name: 'Birthday Website',
+    note: 'A fun page to celebrate the day',
+    price: 'Rs.5000',
+    unit: 'all inclusive',
     features: [
-      'React/React Native frontend',
-      'API & backend integration',
-      'Role-based interfaces',
-      'Ongoing support available',
+      'Celebrant photos & gallery',
+      'Party details & countdown',
+      'RSVP form',
+      '1 round of revisions',
     ],
-    cta: 'Book a call',
+    cta: 'Get started',
+    featured: false,
+  },
+  {
+    name: 'Party Website',
+    note: 'A simple site for any celebration',
+    price: 'Rs.5000',
+    unit: 'all inclusive',
+    features: [
+      'Event details & schedule',
+      'Photo gallery',
+      'RSVP form',
+      '1 round of revisions',
+    ],
+    cta: 'Get started',
     featured: false,
   },
 ]
@@ -50,10 +49,9 @@ export default function Pricing() {
       <div className="container">
         <div className="section-head">
           <div className="eyebrow">Pricing</div>
-          <h2>Reasonable rates, clear scope</h2>
+          <h2>Wedding, birthday & party websites</h2>
           <p>
-            Every project starts with a scoping call — the numbers below are
-            starting points, not the final invoice.
+            One flat rate for every occasion — no hidden fees, no surprises.
           </p>
         </div>
 
@@ -79,8 +77,8 @@ export default function Pricing() {
         </div>
 
         <p className="pricing-footnote">
-          Final pricing depends on scope, timeline, and integrations — we'll
-          always confirm it in writing before work starts.
+          Every package is Rs.5000, regardless of occasion — just share your
+          details and we'll get started.
         </p>
       </div>
     </section>
