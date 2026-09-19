@@ -1,6 +1,11 @@
+import weddingImg from '../assets/plans/wedding.svg'
+import birthdayImg from '../assets/plans/birthday.svg'
+import partyImg from '../assets/plans/party.svg'
+
 const PLANS = [
   {
     name: 'Wedding Website',
+    image: weddingImg,
     note: 'A beautiful site for your big day',
     price: 'Rs.5000',
     unit: 'all inclusive',
@@ -15,6 +20,7 @@ const PLANS = [
   },
   {
     name: 'Birthday Website',
+    image: birthdayImg,
     note: 'A fun page to celebrate the day',
     price: 'Rs.5000',
     unit: 'all inclusive',
@@ -29,6 +35,7 @@ const PLANS = [
   },
   {
     name: 'Party Website',
+    image: partyImg,
     note: 'A simple site for any celebration',
     price: 'Rs.5000',
     unit: 'all inclusive',
@@ -59,6 +66,7 @@ export default function Pricing() {
           {PLANS.map((plan) => (
             <div className={`price-card${plan.featured ? ' featured' : ''}`} key={plan.name}>
               {plan.featured && <span className="price-featured-tag">Most requested</span>}
+              <img className="price-image" src={plan.image} alt="" loading="lazy" />
               <h3>{plan.name}</h3>
               <p className="price-note">{plan.note}</p>
               <div className="price-amount">

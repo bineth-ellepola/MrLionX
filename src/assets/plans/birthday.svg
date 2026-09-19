@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 340" fill="none">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3fd9e8"/><stop offset="1" stop-color="#4c86ff"/></linearGradient>
+    <radialGradient id="glow" cx="50%" cy="60%" r="55%"><stop offset="0" stop-color="#4c86ff" stop-opacity=".28"/><stop offset="1" stop-color="#4c86ff" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="600" height="340" fill="#0b1224"/>
+  <rect width="600" height="340" fill="url(#glow)"/>
+  <!-- balloons -->
+  <g>
+    <path d="M110 250c0-50-6-80-2-110" stroke="#2c4166" stroke-width="2"/>
+    <ellipse cx="108" cy="110" rx="34" ry="42" fill="url(#g)" opacity=".9"/>
+    <path d="M490 250c0-50 6-80 2-110" stroke="#2c4166" stroke-width="2"/>
+    <ellipse cx="492" cy="105" rx="34" ry="42" fill="#4c86ff" opacity=".75"/>
+    <path d="M540 260c0-40 4-60 0-80" stroke="#2c4166" stroke-width="2"/>
+    <ellipse cx="540" cy="150" rx="26" ry="32" fill="#3fd9e8" opacity=".6"/>
+  </g>
+  <!-- cake -->
+  <rect x="190" y="220" width="220" height="70" rx="10" fill="#111b30" stroke="#2c4166" stroke-width="3"/>
+  <rect x="215" y="160" width="170" height="60" rx="10" fill="#111b30" stroke="url(#g)" stroke-width="4"/>
+  <path d="M215 185c14 14 28 14 42 0s28-14 42 0 28 14 42 0 28-14 42 0" stroke="url(#g)" stroke-width="5" stroke-linecap="round"/>
+  <path d="M190 250c18 12 36 12 55 0s37-12 55 0 37 12 55 0 37-12 55 0" stroke="#3fd9e8" stroke-width="4" stroke-linecap="round" opacity=".7"/>
+  <rect x="150" y="290" width="300" height="12" rx="6" fill="#1c2942"/>
+  <!-- candles -->
+  <g fill="#eef3fb">
+    <rect x="257" y="128" width="8" height="32" rx="2"/>
+    <rect x="296" y="128" width="8" height="32" rx="2"/>
+    <rect x="335" y="128" width="8" height="32" rx="2"/>
+  </g>
+  <g fill="#3fd9e8">
+    <path d="M261 100c8 8 8 16 0 22-8-6-8-14 0-22z"/>
+    <path d="M300 100c8 8 8 16 0 22-8-6-8-14 0-22z"/>
+    <path d="M339 100c8 8 8 16 0 22-8-6-8-14 0-22z"/>
+  </g>
+  <g fill="#eef3fb">
+    <path d="M60 220l3 8 8 3-8 3-3 8-3-8-8-3 8-3z" opacity=".6"/>
+    <path d="M420 60l4 10 10 4-10 4-4 10-4-10-10-4 10-4z" opacity=".7"/>
+  </g>
+</svg>
