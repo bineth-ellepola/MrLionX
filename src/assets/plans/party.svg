@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 340" fill="none">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3fd9e8"/><stop offset="1" stop-color="#4c86ff"/></linearGradient>
+    <radialGradient id="glow" cx="35%" cy="70%" r="60%"><stop offset="0" stop-color="#3fd9e8" stop-opacity=".25"/><stop offset="1" stop-color="#3fd9e8" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="600" height="340" fill="#0b1224"/>
+  <rect width="600" height="340" fill="url(#glow)"/>
+  <!-- party popper -->
+  <path d="M150 300l60-170 110 110z" fill="url(#g)"/>
+  <path d="M182 210l70 70M168 250l45 45" stroke="#0b1224" stroke-width="5" stroke-linecap="round" opacity=".45"/>
+  <ellipse cx="265" cy="185" rx="16" ry="62" transform="rotate(-45 265 185)" fill="#0b1224" stroke="url(#g)" stroke-width="4"/>
+  <!-- streamers -->
+  <path d="M290 150c50-50 90-30 120-70s70-30 100-10" stroke="#3fd9e8" stroke-width="4" stroke-linecap="round"/>
+  <path d="M300 170c60-20 100 10 140-20s60-40 110-20" stroke="#4c86ff" stroke-width="4" stroke-linecap="round" opacity=".8"/>
+  <path d="M285 195c70 10 90 50 140 30s70-30 120 0" stroke="#eef3fb" stroke-width="3" stroke-linecap="round" opacity=".5"/>
+  <!-- confetti -->
+  <g>
+    <rect x="360" y="60" width="14" height="14" rx="3" fill="#3fd9e8" transform="rotate(20 367 67)"/>
+    <rect x="440" y="120" width="12" height="12" rx="3" fill="#4c86ff" transform="rotate(-25 446 126)"/>
+    <rect x="500" y="200" width="14" height="14" rx="3" fill="#eef3fb" opacity=".8" transform="rotate(35 507 207)"/>
+    <rect x="400" y="250" width="12" height="12" rx="3" fill="#3fd9e8" opacity=".8" transform="rotate(10 406 256)"/>
+    <rect x="330" y="270" width="10" height="10" rx="2" fill="#4c86ff" transform="rotate(-15 335 275)"/>
+    <circle cx="540" cy="80" r="7" fill="#3fd9e8" opacity=".8"/>
+    <circle cx="470" cy="290" r="6" fill="#eef3fb" opacity=".6"/>
+    <circle cx="90" cy="90" r="6" fill="#4c86ff" opacity=".8"/>
+    <circle cx="60" cy="200" r="5" fill="#3fd9e8" opacity=".7"/>
+  </g>
+  <g fill="#eef3fb">
+    <path d="M330 40l4 10 10 4-10 4-4 10-4-10-10-4 10-4z" opacity=".8"/>
+    <path d="M550 150l3 8 8 3-8 3-3 8-3-8-8-3 8-3z" opacity=".6"/>
+  </g>
+</svg>
