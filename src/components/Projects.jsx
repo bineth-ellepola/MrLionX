@@ -5,6 +5,9 @@ import weddingCountdown from '../assets/wedding/wedding-countdown.png'
 import bdayHero from '../assets/Bday/bday-hero.png'
 import bdayDetails from '../assets/Bday/bday-details.png'
 import bdayTimeline from '../assets/Bday/bday-timeline.png'
+import partyHero from '../assets/Parties/party-hero.png'
+import partyDetails from '../assets/Parties/party-details.png'
+import partyLocation from '../assets/Parties/party-location.png'
 
 const PROJECTS = [
   {
@@ -24,6 +27,15 @@ const PROJECTS = [
     stack: ['React', 'Vite', 'RSVP form', 'Netlify'],
     demoUrl: 'https://lively-valkyrie-c1d794.netlify.app',
     previews: [bdayHero, bdayDetails, bdayTimeline],
+  },
+  {
+    tag: 'Party website',
+    title: 'Get-together event website',
+    description:
+      'A stylish event page for a casual get-together, with event details, a location map, and an RSVP form — the kind of site we build for clients hosting any kind of party.',
+    stack: ['React', 'Vite', 'RSVP form', 'Netlify'],
+    demoUrl: 'https://illustrious-sundae-37527d.netlify.app',
+    previews: [partyHero, partyDetails, partyLocation],
   },
 ]
 
