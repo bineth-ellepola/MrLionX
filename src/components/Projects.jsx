@@ -2,6 +2,9 @@ import { useState } from 'react'
 import weddingHero from '../assets/wedding/wedding-hero.png'
 import weddingStory from '../assets/wedding/wedding-story.png'
 import weddingCountdown from '../assets/wedding/wedding-countdown.png'
+import bdayHero from '../assets/Bday/bday-hero.png'
+import bdayDetails from '../assets/Bday/bday-details.png'
+import bdayTimeline from '../assets/Bday/bday-timeline.png'
 
 const PROJECTS = [
   {
@@ -14,32 +17,13 @@ const PROJECTS = [
     previews: [weddingHero, weddingStory, weddingCountdown],
   },
   {
-    tag: 'Web app',
-    title: 'Inventory management platform',
+    tag: 'Birthday website',
+    title: 'Birthday invitation website',
     description:
-      'A full inventory system with role-based access for store keepers and managers, plus a material request and approval workflow, built in an industrial-themed UI.',
-    stack: ['React', 'Node.js', 'MongoDB Atlas', 'Tailwind CSS'],
-  },
-  {
-    tag: 'Mobile + web',
-    title: 'Freelance gig marketplace',
-    description:
-      'A cross-platform marketplace connecting freelancers with clients, built on a shared design token system with a strict, reusable component architecture.',
-    stack: ['React Native', 'Expo', 'NativeWind', 'MongoDB'],
-  },
-  {
-    tag: 'UI/UX',
-    title: 'Hospital appointment booking app',
-    description:
-      'Booking flows designed for three separate user roles — patients, staff, and doctors — mapped screen by screen before a single line of code was written.',
-    stack: ['Figma', 'UI/UX design', 'Mobile-first'],
-  },
-  {
-    tag: 'Web app',
-    title: 'Food donation platform',
-    description:
-      'A four-role donation platform (donors, recipients, drivers, admins) taken from interactive prototypes to a fully mapped, screen-accurate build.',
-    stack: ['React', 'Responsive design', 'Multi-role UX'],
+      'A vibrant birthday invitation with event details, an evening timeline, a memories gallery, and a built-in RSVP form — the kind of site we build for clients celebrating a milestone.',
+    stack: ['React', 'Vite', 'RSVP form', 'Netlify'],
+    demoUrl: 'https://lively-valkyrie-c1d794.netlify.app',
+    previews: [bdayHero, bdayDetails, bdayTimeline],
   },
 ]
 
@@ -55,8 +39,8 @@ export default function Projects() {
           <div className="eyebrow">Selected work</div>
           <h2>A few things we've shipped</h2>
           <p>
-            Real builds across web and mobile, spanning inventory, marketplace,
-            healthcare, and social-impact products.
+            Live invitation sites we build for clients celebrating weddings,
+            birthdays, and other milestones — tap a card for a closer look.
           </p>
         </div>
 
