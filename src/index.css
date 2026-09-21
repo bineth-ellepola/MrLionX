@@ -547,6 +547,88 @@ p { margin: 0; }
   .projects-grid { grid-template-columns: 1fr; }
 }
 
+.project-card-interactive {
+  cursor: pointer;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.project-card-interactive:hover,
+.project-card-interactive:focus-visible {
+  border-color: var(--cyan);
+  transform: translateY(-2px);
+}
+
+.project-view-link {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  color: var(--cyan);
+}
+
+.project-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(6, 10, 20, 0.75);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  z-index: 100;
+}
+
+.project-modal {
+  position: relative;
+  background: var(--surface-2);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  padding: 2rem;
+  max-width: 720px;
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.project-modal h3 { font-size: 1.3rem; }
+.project-modal p { color: var(--text-dim); font-size: 0.95rem; }
+
+.project-modal-close {
+  position: absolute;
+  top: 0.9rem;
+  right: 0.9rem;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid var(--border-strong);
+  border-radius: 50%;
+  color: var(--text);
+  font-size: 1.3rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.project-modal-close:hover { border-color: var(--cyan); color: var(--cyan); }
+
+.project-modal-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.project-modal-gallery img {
+  width: 100%;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  display: block;
+}
+
+.project-modal .btn { align-self: flex-start; }
+
 /* ==========================================================================
    Pricing
    ========================================================================== */
