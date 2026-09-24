@@ -40,6 +40,7 @@ export default function Footer() {
         <div className="footer-bottom">
           <span>&copy; {year} MrLionX. All rights reserved.</span>
           <div className="footer-socials">
+            <a href="/admin">Admin login</a>
             <a href="#top" aria-label="Back to top">Back to top ↑</a>
           </div>
         </div>

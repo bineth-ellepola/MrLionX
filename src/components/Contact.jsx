@@ -1,8 +1,25 @@
 import { useState } from 'react'
+import { API_URL } from '../lib/api.js'
 
 const BUDGETS = ['Under $300', '$300 - $800', '$800 - $2,000', "Let's discuss"]
 const CONTACT_EMAIL = 'binethellepola@gmail.com'
 const CONTACT_PHONE = '0742676588'
+// Falls back to FormSubmit when no backend is configured.
+function sendMessage(form) {
+  if (!API_URL) {
+    return fetch(`https://formsubmit.co/ajax/${CONTACT_EMAIL}`, {
+      method: 'POST',
+      headers: { Accept: 'application/json' },
+      body: new FormData(form),
+    })
+  }
+
+  return fetch(`${API_URL}/api/contact`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(Object.fromEntries(new FormData(form))),
+  })
+}
 
 export default function Contact() {
   const [status, setStatus] = useState('')
@@ -13,12 +30,12 @@ export default function Contact() {
     setStatus('Sending...')
 
     try {
-      const response = await fetch(`https://formsubmit.co/ajax/${CONTACT_EMAIL}`, {
-        method: 'POST',
-        headers: { Accept: 'application/json' },
-        body: new FormData(form),
-      })
+      const response = await sendMessage(form)
 
+      if (response.status === 429) {
+        setStatus('Too many messages - please try again later.')
+        return
+      }
       if (!response.ok) throw new Error('Request failed')
 
       setStatus("Thanks - we'll reply within 1-2 business days.")
@@ -58,6 +75,15 @@ export default function Contact() {
         </div>
 
         <form className="contact-form" onSubmit={handleSubmit}>
+          {/* Honeypot: hidden from people, filled in by spam bots */}
+          <input
+            type="text"
+            name="_honey"
+            tabIndex={-1}
+            autoComplete="off"
+            aria-hidden="true"
+            style={{ display: 'none' }}
+          />
           <div className="form-row">
             <div className="field">
               <label htmlFor="name">Name</label>
