@@ -127,9 +127,10 @@ http://localhost:5173/admin.
    `ADMIN_USERNAME`, `ADMIN_PASSWORD`, `JWT_SECRET`, `CLOUD_NAME`,
    `CLOUD_API_KEY`, `CLOUD_API_SECRET` (same values as your local `.env`), and
    optionally the SMTP settings. Leave out `PORT` and `DNS_SERVERS`.
-3. **Vercel**: *Project → Settings → Environment Variables*, add
-   `VITE_API_URL=https://<your-service>.onrender.com` (the URL Render shows),
-   then redeploy.
+3. **Vercel**: nothing to set. Production builds read the API URL
+   (`https://mrlionx.onrender.com`) from `.env.production`. If the backend
+   URL ever changes, edit that file, or set `VITE_API_URL` in Vercel's
+   Environment Variables (which overrides it) and redeploy.
 4. Open https://mr-lion-x.vercel.app/admin, log in, and click **Import the
    original site content** to load the current projects and pricing into the
    database. Until you do, the Projects and Pricing sections will be empty.
