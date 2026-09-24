@@ -1,56 +1,9 @@
-import weddingImg from '../assets/plans/wedding.svg'
-import birthdayImg from '../assets/plans/birthday.svg'
-import partyImg from '../assets/plans/party.svg'
-
-const PLANS = [
-  {
-    name: 'Wedding Website',
-    image: weddingImg,
-    note: 'A beautiful site for your big day',
-    price: 'Rs.5000',
-    unit: 'all inclusive',
-    features: [
-      'Our story & photo gallery',
-      'Event date, time & venue details',
-      'RSVP form',
-      '1 round of revisions',
-    ],
-    cta: 'Get started',
-    featured: true,
-  },
-  {
-    name: 'Birthday Website',
-    image: birthdayImg,
-    note: 'A fun page to celebrate the day',
-    price: 'Rs.5000',
-    unit: 'all inclusive',
-    features: [
-      'Celebrant photos & gallery',
-      'Party details & countdown',
-      'RSVP form',
-      '1 round of revisions',
-    ],
-    cta: 'Get started',
-    featured: false,
-  },
-  {
-    name: 'Party Website',
-    image: partyImg,
-    note: 'A simple site for any celebration',
-    price: 'Rs.5000',
-    unit: 'all inclusive',
-    features: [
-      'Event details & schedule',
-      'Photo gallery',
-      'RSVP form',
-      '1 round of revisions',
-    ],
-    cta: 'Get started',
-    featured: false,
-  },
-]
+import useContent from '../lib/useContent.js'
+import { DEFAULT_PLANS } from '../data/defaults.js'
 
 export default function Pricing() {
+  const plans = useContent('/api/plans', DEFAULT_PLANS)
+
   return (
     <section className="section section-alt" id="pricing">
       <div className="container">
@@ -63,17 +16,17 @@ export default function Pricing() {
         </div>
 
         <div className="pricing-grid">
-          {PLANS.map((plan) => (
-            <div className={`price-card${plan.featured ? ' featured' : ''}`} key={plan.name}>
+          {plans.map((plan) => (
+            <div className={`price-card${plan.featured ? ' featured' : ''}`} key={plan._id || plan.name}>
               {plan.featured && <span className="price-featured-tag">Most requested</span>}
-              <img className="price-image" src={plan.image} alt="" loading="lazy" />
+              {plan.image && <img className="price-image" src={plan.image} alt="" loading="lazy" />}
               <h3>{plan.name}</h3>
               <p className="price-note">{plan.note}</p>
               <div className="price-amount">
                 {plan.price} <span>{plan.unit}</span>
               </div>
               <ul className="price-features">
-                {plan.features.map((feature) => (
+                {(plan.features || []).map((feature) => (
                   <li key={feature}>{feature}</li>
                 ))}
               </ul>
@@ -85,8 +38,7 @@ export default function Pricing() {
         </div>
 
         <p className="pricing-footnote">
-          Every package is Rs.5000, regardless of occasion — just share your
-          details and we'll get started.
+          No hidden fees — just share your details and we'll get started.
         </p>
       </div>
     </section>
